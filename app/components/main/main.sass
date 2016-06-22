@@ -1,0 +1,45 @@
+$sticky-footer-height: 100px
+
+html,body
+  height: 100%
+
+body
+  margin: 0
+  font-family: sans-serif
+
+ui-view
+  display: block
+
+.content
+  min-height: 100%
+  margin-bottom: -$sticky-footer-height
+  &:after
+    content: ''
+    display: block
+    height: $sticky-footer-height
+
+.layout-section
+  display: flex
+  justify-content: space-between
+
+  @media (max-width: 767px)
+    flex-flow: column nowrap
+
+.slides
+  flex: 0 1 70%
+
+  @media (max-width: 767px)
+    flex: 100%
+    order: 2
+
+.menu
+  flex: 0 1 30%
+
+  @media (max-width: 767px)
+    flex: 100%
+    order: 1
+
+.main-footer
+  background: #efefef
+  height: $sticky-footer-height
+  line-height: $sticky-footer-height
