@@ -1,1 +1,22 @@
-<h1>{{TodoListCtrl.title}}</h1>
+<section class="container">
+
+  <h2>
+    Todos List
+    <a ui-sref='list.add' class="btn btn-primary">New todo</a>
+  </h2>
+
+  <table cellspacing="0" class="table">
+    <tbody>
+      <tr ng-repeat='item in list.todos track by $index'>
+        <td class='col-xs-12'>{{item.title}}</td>
+        <td>
+          <a class="btn btn-warning" ui-sref="list.edit({id: item.id})">Edit</a>
+        </td>
+        <td>
+          <div class="btn btn-danger" ng-click='list.removeTodo($index)'>Remove</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>

@@ -1,11 +1,16 @@
 import angular from 'angular';
 import 'angular-ui-router';
 
-import 'services/services';
 import 'directives/directives';
+import 'services/services';
 
 import routes from 'config/routes';
 
-angular.module('trial-task', ['ui.router', 'services', 'directives'])
+angular.module('trial-task', ['ui.router', 'directives', 'services'])
 
-.config(routes);
+.config(routes)
+
+.run(function($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+});

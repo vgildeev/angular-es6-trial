@@ -7,7 +7,6 @@ var git = require('gulp-git');
 var ngConstant = require('gulp-ng-constant');
 var rm = require('gulp-rimraf');
 
-var KarmaServer = require('karma').Server;
 var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var webpackConfig = require("./webpack.config.js");
@@ -37,22 +36,6 @@ gulp.task("webpack-dev-server", function(callback) {
 		if(err) throw new gutil.PluginError("webpack-dev-server", err);
 		gutil.log("[webpack-dev-server]", "http://127.0.0.1:9001");
 	});
-});
-
-gulp.task('karma', function(done) {
-  var server = new KarmaServer({
-	  configFile: __dirname + '/test/karma.conf.js',
-	  singleRun: false
-  }, done);
-  server.start();
-});
-
-gulp.task('karma:ci', function(done) {
-	var server = new KarmaServer({
-  	  configFile: __dirname + '/test/karma.ci.conf.js',
-  	  singleRun: true
-    }, done);
-    server.start();
 });
 
 gulp.task("clean", function() {

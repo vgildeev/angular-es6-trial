@@ -1,4 +1,8 @@
-export default function($scope) {
-    $scope.slides = [];
-    $scope.slides.length = 12;
+class MainCtrl {
+    constructor() {
+        this.slides = [];
+        this.slides.length = 12;
+    }
 }
+
+export default MainCtrl;

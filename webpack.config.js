@@ -37,12 +37,7 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.UglifyJsPlugin({ minimize: true, output: { comments: false }}),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery'
-        })
+        new webpack.optimize.UglifyJsPlugin({ minimize: true, output: { comments: false }})
     ],
     resolve: {
         root: path.resolve('app/'),
