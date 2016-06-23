@@ -1,0 +1,13 @@
+<table cellspacing="0" class="table">
+  <tbody>
+    <tr ng-repeat='item in todos track by $index'>
+      <td class='col-xs-12'>{{item.title}}</td>
+      <td>
+        <a class="btn btn-warning" ui-sref="list.edit({id: item.id})">Edit</a>
+      </td>
+      <td>
+        <div class="btn btn-danger" ng-click='removeTodo($index)'>Remove</div>
+      </td>
+    </tr>
+  </tbody>
+</table>

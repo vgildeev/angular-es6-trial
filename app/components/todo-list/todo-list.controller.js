@@ -20,10 +20,6 @@ class TodoListCtrl {
         this.todo = {};
     }
 
-    removeTodo(idx) {
-        this.todos.splice(idx, 1);
-        TODOS.get(this).addToStorage(this.todos);
-    }
 }
 
 TodoListCtrl.$inject = ['Todos'];
