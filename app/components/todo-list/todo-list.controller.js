@@ -6,6 +6,7 @@ class TodoListCtrl {
     constructor(Todos) {
         this.todo = {};
         this.todos = [];
+
         TODOS.set(this, Todos);
         TODOS.get(this).fetch().then(
             (success) => { this.todos = success; },
@@ -13,13 +14,16 @@ class TodoListCtrl {
         );
     }
 
-    addTodo(todo) {
+    addTodo(todo, form) {
+        if (!todo || !todo.title) { return; }
         todo.id = uuid.v1();
         this.todos.push(todo);
         TODOS.get(this).addToStorage(this.todos);
         this.todo = {};
+        form.$setValidity();
+        form.$setUntouched();
+        alert('Todo has been added successfully');
     }
-
 }
 
 TodoListCtrl.$inject = ['Todos'];

@@ -9,6 +9,7 @@ class TodoList {
         this.scope = {
             todos: '='
         };
+
         TODOS.set(this, Todos);
     }
 

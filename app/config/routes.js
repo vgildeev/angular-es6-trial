@@ -8,6 +8,7 @@ import TodoListCtrl from 'components/todo-list/todo-list.controller';
 import 'components/todo-list/add/todo-add.html';
 
 import 'components/todo-list/edit/todo-edit.html';
+import TodoEditCtrl from 'components/todo-list/edit/todo-edit.controller';
 
 export default function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
@@ -39,7 +40,7 @@ export default function($stateProvider, $urlRouterProvider) {
         .state('list.edit', {
             url: '/edit/:id',
             templateUrl: '/components/todo-list/edit/todo-edit.html',
-            controller: TodoListCtrl,
-            controllerAs: 'list'
+            controller: TodoEditCtrl,
+            controllerAs: 'todoEdit'
         });
 }
