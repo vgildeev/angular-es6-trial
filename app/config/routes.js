@@ -10,6 +10,9 @@ import 'components/todo-list/add/todo-add.html';
 import 'components/todo-list/edit/todo-edit.html';
 import TodoEditCtrl from 'components/todo-list/edit/todo-edit.controller';
 
+import 'components/table-plots/table-plots.html';
+import TablePlotsCtrl from 'components/table-plots/table-plots.controller';
+
 export default function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
@@ -42,5 +45,11 @@ export default function($stateProvider, $urlRouterProvider) {
             templateUrl: '/components/todo-list/edit/todo-edit.html',
             controller: TodoEditCtrl,
             controllerAs: 'todoEdit'
+        })
+        .state('table-plots', {
+            url: '/table-plots',
+            templateUrl: '/components/table-plots/table-plots.html',
+            controller: TablePlotsCtrl,
+            controllerAs: 'table'
         });
 }

@@ -1,0 +1,22 @@
+<section class='row'>
+  <div class='col-sm-3'>
+    <table cellspacing="0" class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>X</th>
+          <th>Y</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='val in tableData track by $index'>
+          <td>{{val.x}}</td>
+          <td>{{val.y}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div ng-transclude class='col-sm-7'>
+    <plot></plot>
+  </div>
+</section>
